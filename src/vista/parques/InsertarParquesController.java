@@ -1,6 +1,7 @@
 package vista.parques;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,9 +16,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import static modelo.ConexionBD.conn;
+import modelo.ConnInyectable;
 
-public class InsertarParquesController implements Initializable {
+public class InsertarParquesController implements Initializable, ConnInyectable {
 
     @FXML
     private TextField tfIdParque;
@@ -31,6 +32,13 @@ public class InsertarParquesController implements Initializable {
     private ComboBox<String> comboIdComunidad;
 
     private Map<String, Integer> comunidades = new HashMap<>();
+
+    private Connection conn;
+
+    @Override
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

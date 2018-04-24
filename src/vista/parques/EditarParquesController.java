@@ -1,6 +1,7 @@
 package vista.parques;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,9 +12,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import static modelo.ConexionBD.conn;
+import modelo.ConnInyectable;
 
-public class EditarParquesController implements Initializable {
+public class EditarParquesController implements Initializable, ConnInyectable {
 
     @FXML
     private TextField tfId;
@@ -37,6 +38,13 @@ public class EditarParquesController implements Initializable {
     private Integer numeroTotal;
     @FXML
     private Button btGuardar;
+
+    private Connection conn;
+
+    @Override
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

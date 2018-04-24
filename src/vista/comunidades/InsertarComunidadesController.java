@@ -1,20 +1,19 @@
 package vista.comunidades;
 
 import java.net.URL;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import static modelo.ConexionBD.conn;
+import modelo.ConnInyectable;
 
-public class InsertarComunidadesController implements Initializable {
+public class InsertarComunidadesController implements Initializable, ConnInyectable {
 
     @FXML
     private TextField tfNombre;
@@ -23,6 +22,13 @@ public class InsertarComunidadesController implements Initializable {
 
     @FXML
     private TextField tfId;
+
+    private Connection conn;
+
+    @Override
+    public void setConn(Connection conn) {
+        this.conn = conn;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
