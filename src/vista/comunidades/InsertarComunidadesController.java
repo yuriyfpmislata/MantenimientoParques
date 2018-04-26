@@ -29,6 +29,9 @@ public class InsertarComunidadesController implements Initializable, ConnInyecta
     public void setConn(Connection conn) {
         this.conn = conn;
     }
+    
+        @Override
+    public void consultaInicial() {}
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

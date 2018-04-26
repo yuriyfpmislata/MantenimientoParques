@@ -42,7 +42,7 @@ public class EliminarComunidadesController implements Initializable, ConnInyecta
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void consultaInicial() {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM comunidad");
             comunidades = ps.executeQuery();
@@ -52,6 +52,11 @@ public class EliminarComunidadesController implements Initializable, ConnInyecta
         } catch (SQLException e) {
             System.err.println("Error al ejecutar la consulta inicial de InsertController");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
 
     @FXML
@@ -147,7 +152,7 @@ public class EliminarComunidadesController implements Initializable, ConnInyecta
             ps.executeUpdate();
 
             // actualizar interfaz (rehaciendo el SELECT)
-            this.initialize(null, null);
+            this.consultaInicial();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
 

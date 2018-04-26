@@ -47,7 +47,7 @@ public class EliminarParquesController implements Initializable, ConnInyectable 
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void consultaInicial() {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM parque");
             parques = ps.executeQuery();
@@ -57,6 +57,11 @@ public class EliminarParquesController implements Initializable, ConnInyectable 
         } catch (SQLException e) {
             System.err.println("Error al ejecutar la consulta inicial de InsertController");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
     }
 
     @FXML
@@ -156,7 +161,7 @@ public class EliminarParquesController implements Initializable, ConnInyectable 
             ps.executeUpdate();
 
             // actualizar interfaz (rehaciendo el SELECT)
-            this.initialize(null, null);
+            this.consultaInicial();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
 

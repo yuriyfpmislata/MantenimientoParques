@@ -47,7 +47,7 @@ public class ListarComunidadesController implements Initializable, ConnInyectabl
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void consultaInicial() {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM comunidad");
             comunidades = ps.executeQuery();
@@ -57,6 +57,10 @@ public class ListarComunidadesController implements Initializable, ConnInyectabl
         } catch (SQLException e) {
             System.err.println("Error al ejecutar la consulta inicial de InsertController");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
 
     }
 

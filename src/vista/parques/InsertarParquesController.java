@@ -41,7 +41,7 @@ public class InsertarParquesController implements Initializable, ConnInyectable 
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void consultaInicial() {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM comunidad");
             ResultSet res = ps.executeQuery();
@@ -54,6 +54,10 @@ public class InsertarParquesController implements Initializable, ConnInyectable 
         } catch (SQLException e) {
             System.err.println("Error al ejecutar la consulta inicial de InsertController");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
 
     }
 

@@ -63,10 +63,11 @@ public class MantenimientoParquesController implements Initializable {
         escenario.setTitle(titulo);
         escenario.initModality(Modality.APPLICATION_MODAL);
         escenario.setScene(new Scene(loader.load()));
-        escenario.showAndWait();
+        escenario.show();
         
         ConnInyectable controlador = loader.getController();
         controlador.setConn(conn);
+        controlador.consultaInicial();
     }
 
     @FXML

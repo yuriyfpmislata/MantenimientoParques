@@ -33,16 +33,16 @@ public class EditarComunidadesController implements Initializable, ConnInyectabl
     private Integer numeroTotal;
     @FXML
     private Button btGuardar;
-    
+
     private Connection conn;
-    
+
     @Override
     public void setConn(Connection conn) {
         this.conn = conn;
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void consultaInicial() {
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM comunidad");
             comunidades = ps.executeQuery();
@@ -52,6 +52,10 @@ public class EditarComunidadesController implements Initializable, ConnInyectabl
         } catch (SQLException e) {
             System.err.println("Error al ejecutar la consulta inicial de InsertController");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
     }
 
     @FXML
@@ -152,7 +156,7 @@ public class EditarComunidadesController implements Initializable, ConnInyectabl
             ps.executeUpdate();
 
             // actualizar interfaz (rehaciendo el SELECT)
-            this.initialize(null, null);
+            this.consultaInicial();
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
