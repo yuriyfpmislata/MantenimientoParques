@@ -55,7 +55,7 @@ public class EditarParquesController implements Initializable, ConnInyectable {
             rellenarNumeroTotal();
             rellenarCampos();
         } catch (SQLException e) {
-            System.err.println("Error al ejecutar la consulta inicial de InsertController");
+            System.err.println("Error al ejecutar la consulta inicial");
         }
     }
 

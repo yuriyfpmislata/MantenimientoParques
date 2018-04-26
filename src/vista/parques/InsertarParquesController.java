@@ -52,7 +52,7 @@ public class InsertarParquesController implements Initializable, ConnInyectable 
 
             comboIdComunidad.setItems(FXCollections.observableArrayList(comunidades.keySet()).sorted());
         } catch (SQLException e) {
-            System.err.println("Error al ejecutar la consulta inicial de InsertController");
+            System.err.println("Error al ejecutar la consulta inicial");
         }
     }
 

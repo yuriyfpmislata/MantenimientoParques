@@ -50,7 +50,7 @@ public class EliminarComunidadesController implements Initializable, ConnInyecta
             rellenarNumeroTotal();
             rellenarCampos();
         } catch (SQLException e) {
-            System.err.println("Error al ejecutar la consulta inicial de InsertController");
+            System.err.println("Error al ejecutar la consulta inicial");
         }
     }
 
