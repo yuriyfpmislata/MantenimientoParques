@@ -13,7 +13,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btListarComunidades" layoutX="14.0" layoutY="152.0" mnemonicParsing="false" onAction="#clickBtListarComunidades" text="Listar" />
+      <Button fx:id="btListarComunidades" layoutX="19.0" layoutY="136.0" mnemonicParsing="false" onAction="#clickBtListarComunidades" text="Listar" />
       <Button fx:id="btEditarParques" layoutX="165.0" layoutY="57.0" mnemonicParsing="false" onAction="#clickBtEditarParques" text="Editar" />
       <Button fx:id="btEliminarParques" layoutX="240.0" layoutY="57.0" mnemonicParsing="false" onAction="#clickBtEliminarParques" text="Eliminar" />
       <Label fx:id="labelComunidades" layoutX="104.0" layoutY="110.0" text="COMUNIDADES">
@@ -21,9 +21,10 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Button fx:id="btListarParques" layoutX="14.0" layoutY="57.0" mnemonicParsing="false" onAction="#clickBtListarParques" text="Listar" />
+      <Button fx:id="btListarParques" layoutX="20.0" layoutY="57.0" mnemonicParsing="false" onAction="#clickBtListarParques" text="Listar" />
       <Button fx:id="btInsertarComunidades" layoutX="81.0" layoutY="152.0" mnemonicParsing="false" onAction="#clickBtInsertarComunidades" text="Insertar" />
       <Button fx:id="btEditarComunidades" layoutX="165.0" layoutY="152.0" mnemonicParsing="false" onAction="#clickBtEditarComunidades" text="Editar" />
       <Button fx:id="btEliminarComunidades" layoutX="240.0" layoutY="152.0" mnemonicParsing="false" onAction="#clickBtEliminarComunidades" text="Eliminar" />
+      <Button fx:id="btListadoComunidades" layoutX="14.0" layoutY="170.0" mnemonicParsing="false" onAction="#clickBtListadoComunidades" text="Listado" />
    </children>
 </AnchorPane>

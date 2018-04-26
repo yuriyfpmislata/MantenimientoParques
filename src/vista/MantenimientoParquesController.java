@@ -39,6 +39,8 @@ public class MantenimientoParquesController implements Initializable {
     private Button btEditarComunidades;
     @FXML
     private Button btEliminarComunidades;
+    @FXML
+    private Button btListadoComunidades;
 
     private Connection conn;
 
@@ -64,7 +66,7 @@ public class MantenimientoParquesController implements Initializable {
         escenario.initModality(Modality.APPLICATION_MODAL);
         escenario.setScene(new Scene(loader.load()));
         escenario.show();
-        
+
         ConnInyectable controlador = loader.getController();
         controlador.setConn(conn);
         controlador.consultaInicial();
@@ -137,6 +139,15 @@ public class MantenimientoParquesController implements Initializable {
     private void clickBtEliminarComunidades(ActionEvent event) {
         try {
             this.cargarVentana_inyectarConexionBD("comunidades/EliminarComunidades.fxml", "Eliminar Comunidades");
+        } catch (IOException e) {
+            System.out.println("Fallo al cargar el FXML -> " + e);
+        }
+    }
+
+    @FXML
+    private void clickBtListadoComunidades(ActionEvent event) {
+        try {
+            this.cargarVentana_inyectarConexionBD("comunidades/ListadoComunidades.fxml", "Listado Comunidades");
         } catch (IOException e) {
             System.out.println("Fallo al cargar el FXML -> " + e);
         }

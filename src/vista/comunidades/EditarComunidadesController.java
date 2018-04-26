@@ -28,11 +28,11 @@ public class EditarComunidadesController implements Initializable, ConnInyectabl
     private Button btUltimo;
     @FXML
     private TextField tfNombre;
+    @FXML
+    private Button btGuardar;
 
     private ResultSet comunidades;
     private Integer numeroTotal;
-    @FXML
-    private Button btGuardar;
 
     private Connection conn;
 
